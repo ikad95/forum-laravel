@@ -15,7 +15,7 @@ before_script:
   - cp .env.travis .env
   - composer install --dev --prefer-source --no-interaction
   - php artisan key:generate
-  - php artisan migrate --seed
+  - php artisan migrate
 
 script:
   - vendor/bin/phpmd app text codesize design naming unusedcode
