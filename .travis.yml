@@ -5,6 +5,12 @@ php:
 
 sudo: false
 
+before_install:
+  - mysql -e 'CREATE DATABASE test;'
+  
+services:
+  - mysql
+  
 before_script:
   - cp .env.travis .env
   - composer install --dev --prefer-source --no-interaction
